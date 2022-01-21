@@ -5,6 +5,16 @@ public class Main {
   public static class Node {
     int data;
     Node next;
+    //default constructor
+    // Node(){
+    //     data=0;
+    //     next=null;
+    // } 
+    //parameter constructor
+    Node(int data){
+        this.data=data;
+        next=null;
+    }
   }
 
   public static class LinkedList {
