@@ -24,7 +24,7 @@ public class mazePaths {
         ArrayList<String> ph=new ArrayList<>();
         ArrayList<String> pv=new ArrayList<>();
 
-      
+      // sr - source
         if(sc<dc){
             ph=getMazePaths(sr,sc+1,dr,dc);
         }
