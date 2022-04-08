@@ -30,11 +30,29 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
     public static void main(String[] args) {
         Integer[] arr = { 50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, n, 70, null, null, 87, null, null };
         Node root = new Node(arr[0]);
         Stack<pair> st = new Stack<>();
         pair rootPair = new pair(root, 1);
+=======
+    public static void display(Node root){
+        if(root==null){
+            return;
+        }
+        System.out.println("root="+root.data);
+        display(root.left);
+        display(root.right);
+
+    }
+
+    public static void main(String[] args){
+        Integer [] data={50,25,12,null,null,37,30,null,null,null,75,62,n,70,null,null,87,null,null};
+        Node root=new Node(arr[0]);
+        Stack<pair> st=new Stack<>();
+        pair rootPair=new pair(root,1);
+>>>>>>> 203810d3ca67eb04e9d4ccfd2e5d61d4e94e0931
         st.push(rootPair);
         int idx = 1;
         while (st.size() != 0) {
@@ -53,7 +71,21 @@ public class Main {
                 // joining to the right child of the node
             } else if (peekPair.state == 2) {
                 peekPair.state++;
+<<<<<<< HEAD
                 if (arr[idx] != null) {
+=======
+<<<<<<< HEAD
+                if(arr.idx!=null){
+=======
+                if(arr[idx]!=null){
+>>>>>>> 1608f47cdf1f636363415436813511dc80ef51fc
+                    
+                    Node rightChild=new Node(arr[idx]);
+                    peekPair.data.right=rightChild; 
+                    st.push(new pair(rightChild,1));
+                 }
+                 idx++;
+>>>>>>> 203810d3ca67eb04e9d4ccfd2e5d61d4e94e0931
 
                     Node rightChild = new Node(arr[idx]);
                     peekPair.data.right = rightChild;
@@ -67,4 +99,6 @@ public class Main {
 
         }
     }
+    display(root);
+}
 }
