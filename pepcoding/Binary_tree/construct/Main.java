@@ -30,18 +30,75 @@ public class Main {
         }
     }
 
-      public static void display(Node root){
-        if(root==null){
+    public static void display(Node root) {
+        if (root == null) {
             return;
         }
-        System.out.println("root="+root.data);
+        if (root.left != null) {
+            System.out.print(root.left.data);
+        } else {
+            System.out.print("..");
+        }
+        System.out.print("<=" + root.data + "=>");
+        if (root.right != null) {
+            System.out.print(root.right.data);
+        } else {
+            System.out.print("..");
+        }
+        System.out.println();
         display(root.left);
         display(root.right);
 
     }
 
+    public static int size(Node root) {
+        // write your code here
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = size(root.left);
+        int rightHeight = size(root.right);
+        return (leftHeight + rightHeight + 1);
+    }
+
+    public static int sum(Node root) {
+        // write your code here
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = sum(root.left);
+        int rightHeight = sum(root.right);
+        return (leftHeight + rightHeight + root.data);
+    }
+
+    public static int max(Node root) {
+        // write your code here
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = max(root.left);
+        int rightHeight = max(root.right);
+        return leftHeight > rightHeight ? leftHeight : rightHeight;
+    }
+
+    public static int height(Node root) {
+        // write your code here
+
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+        if (leftHeight > rightHeight) {
+            return leftHeight + 1;
+        } else {
+            return rightHeight + 1;
+        }
+    }
+
     public static void main(String[] args) {
-        Integer[] arr = { 50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, n, 70, null, null, 87, null, null };
+        Integer[] arr = { 50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null,
+                null };
         Node root = new Node(arr[0]);
         Stack<pair> st = new Stack<>();
         pair rootPair = new pair(root, 1);
@@ -76,5 +133,9 @@ public class Main {
             }
 
         }
+
+        display(root);
+        System.out.println("height=>" + height(root));
+        System.out.println("Size=>" + size(root));
     }
 }
