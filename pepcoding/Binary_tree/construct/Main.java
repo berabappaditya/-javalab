@@ -24,6 +24,10 @@ public class Main{
             this.right=right;
         }
     }
+    public static void display(){
+        System.out.println("");
+
+    }
 
     public static void display(Node root){
         if(root==null){
@@ -44,18 +48,25 @@ public class Main{
         int idx=1;
         while(st.size!=0){
             pair peekPair=st.peek();
+
+            //joining  to the left hand side of the node
             if(peekPair.state==1){
                 peekPair.state++;
-                if(arr.idx!==null){
+                if(arr[idx]!=null){
                     
                     Node leftChild=new Node(arr[idx]);
                     peekPair.data.left=leftChild; 
                     st.push(new pair(leftChild,1));
                  }
                  idx++;
-            }else if(pair.state==2){
+                 //joining  to the right child of the node
+            }else if(peekPair.state==2){
                 peekPair.state++;
+<<<<<<< HEAD
                 if(arr.idx!=null){
+=======
+                if(arr[idx]!=null){
+>>>>>>> 1608f47cdf1f636363415436813511dc80ef51fc
                     
                     Node rightChild=new Node(arr[idx]);
                     peekPair.data.right=rightChild; 
