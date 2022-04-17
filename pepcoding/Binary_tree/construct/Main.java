@@ -34,11 +34,16 @@ public class Main {
         if(root==null){
             return;
         }
-        System.out.println("root="+root.data);
+        if(root.left.data!=null){
+            System.out.print();
+        }
+        System.out.println("<="+root.data+"=>");
         display(root.left);
         display(root.right);
 
     }
+    
+
 
     public static void main(String[] args) {
         Integer[] arr = { 50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, n, 70, null, null, 87, null, null };
