@@ -14,15 +14,24 @@ public class Main {
         }
     }
 
-    public static class Pair {
-        Node node;
-        int state;
+      public static void display(Node root){
+        if(root==null){
+            return;
+        }
+        if(root.left.data!=null){
+            System.out.print();
+        }
+        System.out.println("<="+root.data+"=>");
+        display(root.left);
+        display(root.right);
 
         Pair(Node node, int state) {
             this.node = node;
             this.state = state;
         }
     }
+    
+
 
     public static Node construct(Integer[] arr) {
         Node root = new Node(arr[0], null, null);
