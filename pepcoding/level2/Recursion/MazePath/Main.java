@@ -1,14 +1,14 @@
     public class Main {
         public static boolean inRange(int i,int j,int n,int m) {
             if(i<0 || j<0||i>=n||j>=m) {
-                return flase;
+                return false;
             }
             return true;
         }
 
     public static mazePath_01(int sr,int sc,int dr,int dc,int [][] dir,String [] dirN,String asf){
         if(sr==dr||sc==dc){
-            System.out..println(asf);
+            System.out.println(asf);
             return 1;
         }
         int count=0;
